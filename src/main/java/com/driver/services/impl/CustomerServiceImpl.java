@@ -4,7 +4,6 @@ import com.driver.model.*;
 import com.driver.repository.CabRepository;
 import com.driver.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.driver.repository.CustomerRepository;
@@ -54,7 +53,7 @@ public class CustomerServiceImpl implements CustomerService {
 				TripBooking tripBooking = new TripBooking(fromLocation, toLocation, distanceInKm);
 				Customer customer = customerRepository2.findById(customerId).get();
 				tripBooking.setCustomer(customer);
-				tripBooking.setTripStatus(CONFIRMED);
+				tripBooking.setStatus(CONFIRMED);
 				driver.getCab().setAvailable(false);
 
 				int bill = driver.getCab().getPerKmRate()*distanceInKm;
@@ -88,7 +87,7 @@ public class CustomerServiceImpl implements CustomerService {
 	public void cancelTrip(Integer tripId){
 		//Cancel the trip having given trip Id and update TripBooking attributes accordingly
 		TripBooking tripBooking = tripBookingRepository2.findById(tripId).get();
-		tripBooking.setTripStatus(CANCELED);
+		tripBooking.setStatus(CANCELED);
 		tripBooking.setBill(0);
 		tripBooking.getDriver().getCab().setAvailable(true);
 		tripBookingRepository2.save(tripBooking);
@@ -98,7 +97,7 @@ public class CustomerServiceImpl implements CustomerService {
 	public void completeTrip(Integer tripId){
 		//Complete the trip having given trip Id and update TripBooking attributes accordingly
 		TripBooking tripBooking = tripBookingRepository2.findById(tripId).get();
-		tripBooking.setTripStatus(COMPLETED);
+		tripBooking.setStatus(COMPLETED);
 		tripBooking.getDriver().getCab().setAvailable(true);
 		tripBookingRepository2.save(tripBooking);
 	}

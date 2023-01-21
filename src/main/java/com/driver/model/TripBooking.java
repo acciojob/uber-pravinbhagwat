@@ -27,10 +27,11 @@ public class TripBooking {
     public TripBooking() {
     }
 
-    public TripBooking(String fromLocation, String toLocation, int distanceInKm) {
+    public TripBooking(String fromLocation, String toLocation, int distanceInKm, TripStatus status) {
         this.fromLocation = fromLocation;
         this.toLocation = toLocation;
         this.distanceInKm = distanceInKm;
+        this.status = status;
     }
 
     public int getTripBookingId() {

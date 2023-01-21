@@ -80,7 +80,8 @@ public class CustomerServiceImpl implements CustomerService {
 				return tripBooking;
 			}
 		}
-		throw new Exception("No cab available!");
+		//throw new Exception("No cab available!");
+		return null;
 	}
 
 	@Override

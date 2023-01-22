@@ -1,7 +1,5 @@
 package com.driver.controllers;
 
-import com.driver.dtos.CustomerDTO;
-import com.driver.dtos.DriverDTO;
 import com.driver.model.Admin;
 import com.driver.model.Customer;
 import com.driver.model.Driver;

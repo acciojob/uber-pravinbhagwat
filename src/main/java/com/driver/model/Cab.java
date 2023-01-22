@@ -45,7 +45,7 @@ public class Cab{
     }
 
     public void setAvailable(boolean available) {
-        available = available;
+        this.available = available;
     }
 
     public Driver getDriver() {

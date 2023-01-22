@@ -17,7 +17,7 @@ public class Admin{
 
     public Admin(String username, String password) {
         this.username = username;
-        Password = password;
+        this.Password = password;
     }
 
     public Integer getAdminId() {

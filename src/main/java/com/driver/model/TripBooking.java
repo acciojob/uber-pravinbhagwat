@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class TripBooking {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int tripBookingId;
+    private Integer tripBookingId;
     private String fromLocation;
     private String toLocation;
     private int distanceInKm;
@@ -38,7 +38,7 @@ public class TripBooking {
         return tripBookingId;
     }
 
-    public void setTripBookingId(int tripBookingId) {
+    public void setTripBookingId(Integer tripBookingId) {
         this.tripBookingId = tripBookingId;
     }
 

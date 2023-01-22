@@ -7,6 +7,8 @@ public class Cab{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private int perKmRate;
+
+    @Column(columnDefinition = "TINYINT(1)")
     private boolean available;
 
     // Driver id

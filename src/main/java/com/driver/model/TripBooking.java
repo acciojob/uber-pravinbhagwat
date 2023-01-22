@@ -10,7 +10,7 @@ public class TripBooking {
     private String fromLocation;
     private String toLocation;
     private int distanceInKm;
-    @Enumerated(value = EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     private TripStatus status;
     private int bill;
 
